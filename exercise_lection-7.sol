@@ -35,7 +35,7 @@ contract Teammates7 {
                 // вшив код birthdayPayout відразу сюди, думав можливо рідше Ремікс крашитись буде
                 payable (_teammates[i].account).transfer(PRESENT);
                 _teammates[i].presentReceived = true;
-            }
+            } else if (!checkBirthday(i)) _teammates[i].presentReceived = false; 
         }
     }
     // // Відсилання подарунку
