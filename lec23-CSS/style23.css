@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Overall page teamplate*/
+body {
+  padding: 16px;
+  margin: 0;
+  gap: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "about"
+    "footer";
+  height: 100vh;
+  background: rgb(203, 250, 235);
+  background: linear-gradient(
+    117deg,
+    rgba(203, 250, 235, 1) 0%,
+    rgba(129, 227, 219, 1) 88%
+  );
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+header {
+  grid-area: header;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  column-gap: 20px;
+  list-style-type: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: grey;
+}
+
+/* Main*/
+
+#main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* grid-template-columns: auto; */
+  /* grid-template-areas: "1x1 1x2 1x3"; */
+
+  gap: 16px;
+  /* padding: 10px; */
+}
+
+#main div {
+  padding-top: 10px;
+}
+
+.main-one {
+  background-color: rgb(245, 181, 97);
+}
+.main-two {
+  background-color: rgba(50, 55, 204, 0.668);
+}
+.main-three {
+  background-color: orchid;
+}
+/* About */
+
+#about {
+  grid-area: about;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* grid-template-columns: auto;
+  grid-template-areas: "1x1 1x2 1x3"; */
+  gap: 16px;
+  /* padding: 10px; */
+}
+#about div {
+  padding-top: 10px;
+}
+.about-one {
+  background-color: coral;
+}
+.about-two {
+  background-color: darkslateblue;
+}
+.about-three {
+  background-color: magenta;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+}
+footer header {
+  margin-bottom: 10px;
+  text-align: center;
+}
+textarea {
+  resize: none;
+}
+textarea::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+#contact-us form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.footer__email {
+  margin-bottom: 10px;
+}
+
+/* Screen adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    /* grid-template-rows: auto 300px 300px auto; */
+    grid-template-rows: auto;
+  }
+  #main {
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: auto;
+  }
+  #about {
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(1, auto);
+  }
+}
